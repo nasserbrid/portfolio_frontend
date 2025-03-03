@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-gray-900;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-green-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-green-700;
+}
+
+/* Focus styles */
+:focus {
+  @apply outline-none ring-2 ring-green-600 ring-opacity-50;
+}
+
+/* Form input styles */
+input, textarea {
+  @apply transition-all duration-200;
+}
+
+/* Button hover effects */
+button, a {
+  @apply transition-all duration-200;
+}
