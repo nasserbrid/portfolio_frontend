@@ -1,0 +1,11 @@
+version: 1
+services:
+  - type: web
+    name: portfolio-frontend
+    env: node
+    plan: standard
+    buildCommand: npm install && npm run build
+    startCommand: npm run preview
+    envVars:
+      - key: VITE_API_URL
+        value: https://portfolio-backend-shln.onrender.com/api/
