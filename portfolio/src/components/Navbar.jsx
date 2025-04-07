@@ -10,7 +10,7 @@ function Navbar() {
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0 font-bold text-xl text-white">
             Nasser MOHAMED SAID
-            <span className="block text-sm text-green-400 font-normal">Concepteur Développeur</span>
+            <span className="block text-sm text-green-400 font-normal">Concepteur Développeur d'Application</span>
           </div>
           
           {/* Desktop Navigation */}
