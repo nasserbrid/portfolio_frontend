@@ -23,7 +23,7 @@ function Home() {
             Nasser MOHAMED SAID
           </h1>
           <h2 className="text-lg md:text-xl text-green-600 font-semibold mb-4">
-            Concepteur Développeur
+            Concepteur Développeur d'Application
           </h2>
           <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl">
             Je transforme vos idées en applications web modernes et performantes
