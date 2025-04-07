@@ -7,7 +7,7 @@ function Projets() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:8000/api/projets/")
+    axios.get(`${import.meta.env.VITE_API_URL}projets/`)  
       .then(response => {
         setProjects(response.data);
         setLoading(false);
@@ -18,6 +18,7 @@ function Projets() {
         setLoading(false);
       });
   }, []);
+  
 
   return (
     <section id="projets" className="py-20 bg-gray-50 px-4">

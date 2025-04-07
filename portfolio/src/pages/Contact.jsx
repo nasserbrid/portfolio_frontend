@@ -9,7 +9,8 @@ function Contact() {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(null); // Pour gérer le message de succès
+  //Ici je gèrer le message de succès
+  const [success, setSuccess] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,21 +21,24 @@ function Contact() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Empêche le comportement par défaut du formulaire
+    //J'empêche le comportement par défaut du formulaire
+    e.preventDefault(); 
     setLoading(true);
     setError(null);
     setSuccess(null);
 
     try {
-      const response = await axios.post("http://localhost:8000/api/contact/", contact);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}contact/`, contact);
       setSuccess("Votre message a été envoyé avec succès !");
-      setContact({ name: '', email: '', message: '' }); // Réinitialise le formulaire
+      // Réinitialisation de mon formulaire
+      setContact({ name: '', email: '', message: '' }); 
     } catch (error) {
       console.error("Erreur lors de l'envoi du message :", error);
       setError("Erreur lors de l'envoi des messages. Veuillez réessayer.");
     } finally {
       setLoading(false);
     }
+    
   };
 
   return (
@@ -50,7 +54,7 @@ function Contact() {
               <input
                 type="text"
                 id="name"
-                name="name" // Ajout du nom pour le champ
+                name="name" 
                 value={contact.name}
                 onChange={handleChange}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent"
@@ -64,7 +68,7 @@ function Contact() {
               <input
                 type="email"
                 id="email"
-                name="email" // Ajout du nom pour le champ
+                name="email" 
                 value={contact.email}
                 onChange={handleChange}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent"
@@ -77,7 +81,7 @@ function Contact() {
               </label>
               <textarea
                 id="message"
-                name="message" // Ajout du nom pour le champ
+                name="message" 
                 rows={4}
                 value={contact.message}
                 onChange={handleChange}
@@ -88,7 +92,8 @@ function Contact() {
             <button
               type="submit"
               className="w-full bg-green-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors"
-              disabled={loading} // Désactive le bouton pendant le chargement
+              //Je désactive le bouton pendant le chargement
+              disabled={loading} 
             >
               {loading ? "Envoi..." : "Envoyer le message"}
             </button>
