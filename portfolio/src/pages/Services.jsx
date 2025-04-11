@@ -9,13 +9,13 @@ function Services() {
         <div className="grid md:grid-cols-3 gap-8">
           <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow border border-gray-100">
             <Code className="w-12 h-12 text-green-600 mb-4" />
-            <h3 className="text-xl font-semibold mb-3">Développement Web</h3>
-            <p className="text-gray-600">Applications web sur mesure avec React, Node.js et les dernières technologies.</p>
+            <h3 className="text-xl font-semibold mb-3">Développement Web - Application bureau </h3>
+            <p className="text-gray-600">Applications web sur mesure avec React, C#/.Net, Python/Django, WPF (Pour les application desktop).</p>
           </div>
           <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow border border-gray-100">
             <Palette className="w-12 h-12 text-green-600 mb-4" />
             <h3 className="text-xl font-semibold mb-3">UI/UX Design</h3>
-            <p className="text-gray-600">Interfaces modernes et expériences utilisateur optimisées pour vos projets.</p>
+            <p className="text-gray-600">Interfaces modernes et expériences utilisateur optimisées pour vos projets (outils utilsés : Figma)</p>
           </div>
           <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow border border-gray-100">
             <Globe className="w-12 h-12 text-green-600 mb-4" />
