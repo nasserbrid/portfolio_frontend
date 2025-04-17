@@ -58,7 +58,7 @@ function Projets() {
                 </div>
 
                 {/* Image à droite */}
-                <div className="flex-shrink-0 h-32 md:h-48 relative w-full md:w-1/2"> {/* Hauteur réduite */}
+                <div className="flex-shrink-0 h-32 md:h-48 relative w-full md:w-1/2"> 
                   <img 
                     src={project.image_url} 
                     alt={project.title}
