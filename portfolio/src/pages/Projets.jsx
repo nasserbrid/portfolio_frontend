@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 function Projets() {
   const [projects, setProjects] = useState([]);
@@ -7,18 +7,18 @@ function Projets() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_API_URL}projets/`)  
-      .then(response => {
+    axios
+      .get(`${import.meta.env.VITE_API_URL}Project/`)
+      .then((response) => {
         setProjects(response.data);
         setLoading(false);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Erreur lors du chargement des projets :", error);
         setError("Erreur lors du chargement des projets. Veuillez réessayer.");
         setLoading(false);
       });
   }, []);
-  
 
   return (
     <section id="projets" className="py-20 bg-gray-50 px-4">
@@ -28,39 +28,47 @@ function Projets() {
         </h2>
 
         {loading ? (
-          <p className="text-center text-gray-600 text-lg">Chargement des projets...</p>
+          <p className="text-center text-gray-600 text-lg">
+            Chargement des projets...
+          </p>
         ) : error ? (
           <p className="text-center text-red-600">{error}</p>
         ) : (
           <div className="flex flex-col gap-8">
             {projects.map((project, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row w-full">
+              <div
+                key={index}
+                className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row w-full"
+              >
                 {/* Contenu texte à gauche */}
                 <div className="p-6 flex-grow">
                   <h3 className="text-2xl font-bold text-black mb-2">
-                    <span className="text-green-600">{project.title.split(" ")[0]}</span> {project.title.split(" ").slice(1).join(" ")}
+                    <span className="text-green-600">
+                      {project.title.split(" ")[0]}
+                    </span>{" "}
+                    {project.title.split(" ").slice(1).join(" ")}
                   </h3>
                   <p className="text-gray-700 mb-4">{project.description}</p>
 
                   {/* Compétences mobilisées */}
-                  <h4 className="text-xl font-semibold text-black">Compétences mobilisées :</h4>
+                  <h4 className="text-xl font-semibold text-black">
+                    Compétences mobilisées :
+                  </h4>
                   <ul className="list-disc list-inside text-gray-600 mt-2">
-                    {Array.isArray(project.skills) ? (
-                      project.skills.map((skill, i) => (
-                        <li key={i}>{skill}</li>
-                      ))
-                    ) : (
-                      project.skills.split(',').map((skill, i) => (
-                        <li key={i}>{skill.trim()}</li>
-                      ))
-                    )}
+                    {Array.isArray(project.skills)
+                      ? project.skills.map((skill, i) => (
+                          <li key={i}>{skill}</li>
+                        ))
+                      : project.skills
+                          .split(",")
+                          .map((skill, i) => <li key={i}>{skill.trim()}</li>)}
                   </ul>
                 </div>
 
                 {/* Image à droite */}
-                <div className="flex-shrink-0 h-32 md:h-48 relative w-full md:w-1/2"> 
-                  <img 
-                    src={project.image_url} 
+                <div className="flex-shrink-0 h-32 md:h-48 relative w-full md:w-1/2">
+                  <img
+                    src={project.image_url}
                     alt={project.title}
                     className="w-full h-full object-cover shadow-md"
                   />
@@ -75,105 +83,6 @@ function Projets() {
 }
 
 export default Projets;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React from 'react';
 
@@ -203,8 +112,8 @@ export default Projets;
 //         <div className="grid md:grid-cols-3 gap-8">
 //           {projects.map((project, index) => (
 //             <div key={index} className="group relative overflow-hidden rounded-xl">
-//               <img 
-//                 src={project.image} 
+//               <img
+//                 src={project.image}
 //                 alt={project.title}
 //                 className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
 //               />
