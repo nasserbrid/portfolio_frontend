@@ -8,4 +8,4 @@ services:
     startCommand: npm run preview
     envVars:
       - key: VITE_API_URL
-        value: https://portfolio-backend-shln.onrender.com/api/
+        value: https://portfolio-backend-net.onrender.com/api/
