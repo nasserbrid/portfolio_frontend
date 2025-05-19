@@ -68,7 +68,8 @@ function Projets() {
                 {/* Image à droite */}
                 <div className="flex-shrink-0 h-32 md:h-48 relative w-full md:w-1/2">
                   <img
-                    src={project.image_url}
+                    // src={project.image_url}
+                    src={project.ImageUrl}
                     alt={project.title}
                     className="w-full h-full object-cover shadow-md"
                   />
