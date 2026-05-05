@@ -8,7 +8,7 @@ function Projets() {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_URL}Project/`)
+      .get(`${import.meta.env.VITE_API_URL}projects/`)
       .then((response) => {
         setProjects(response.data);
         setLoading(false);

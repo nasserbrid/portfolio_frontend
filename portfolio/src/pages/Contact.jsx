@@ -29,7 +29,7 @@ function Contact() {
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}Contact/`,
+        `${import.meta.env.VITE_API_URL}contacts/`,
         contact
       );
       setSuccess("Votre message a été envoyé avec succès !");
