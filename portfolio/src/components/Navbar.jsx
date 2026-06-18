@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import logo from '../assets/Gemini_Generated_Image_ml3dldml3dldml3d.png';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,10 +9,10 @@ function Navbar() {
     <nav className="fixed w-full bg-gradient-to-r from-black to-green-900 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          <div className="flex-shrink-0 font-bold text-xl text-white">
-            Nasser MOHAMED SAID
-            <span className="block text-sm text-green-400 font-normal">Concepteur Développeur d'Application</span>
-          </div>
+          <a href="#accueil" className="flex items-center gap-3 flex-shrink-0">
+            <img src={logo} alt="Logo" className="h-10 w-auto" />
+            <span className="text-sm text-green-400 font-normal">Concepteur Développeur d'Application</span>
+          </a>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
